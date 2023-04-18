@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Showcase</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+
+    <style>
+        /* global.css */
+        /* Set default font family, background color, margin, and padding */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(8, 99, 255, 0.2);
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            position: relative;
+        }
+
+        main {
+            padding: 100px 20px 20px;
+            box-sizing: border-box;
+            min-height: calc(100% - 160px);
+        }
+
+        /* header.css */
+        /* Style for header section */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgb(8,98,255);
+            background: linear-gradient(90deg, rgba(8,98,255,1) 0%, rgba(0,255,220,1) 100%);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(8,98,255,1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Style for heading in header section */
+        header p {
+            padding: 10px;
+            font-size: 38px;
+            color: whitesmoke;
+            text-align: left;
+            margin: 0;
+        }
+
+        /* content.css */
+        /* Style for main content section */
+        .content {
+            margin: 10px auto;
+            padding: 20px 40px;
+            max-width: 900px;
+            margin-top: 20px;
+            border: 1px solid ccc;
+            border-radius: 10px;
+            min-height: 200px;
+            background-color: rgba(8, 99, 255, 0.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style for content heading */
+        .content-head {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* Style for content label */
+        .content-label {
+            color: white;
+            font-size: 40px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+            text-shadow: 0 0 1px #ccc;
+        }
+
+        .content p:first-child {
+            font-weight: bolder;
+        }
+
+        /* Style for table section */
+        .content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        /* Style for table cells */
+        .content th {
+            border-left: 1px solid #000;
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        /* Style for table cells */
+        .content td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        /* footer.css */
+
+        /* Style for footer section */
+        footer {
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(102, 153, 206);
+            color: #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style for footer paragraph */
+        footer p {
+            color: #ddd;
+            margin: 0;
+        }
+
+        /* Style for copyright symbol */
+        #cc {
+            font-size: 24px;
+            color: rgb(0, 0, 0);
+            margin: 0;
+        }
+
+        /* modal.css */
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: absolute; /* Change to absolute */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* The Close Button */
+        .close {
+            color: #000;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Modal Header */
+        .modal-header {
+            padding: 2px 16px;
+            margin: 0;
+            background-color: rgb(8,98,255);
+            color: white;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: absolute;
+            background-color: #fefefe;
+            margin: 0 auto;
+            padding: 0;
+            border: 1px solid #888;
+            border-radius: 0 0 10px 10px;
+            width: 40%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .modal-button {
+            color: black;
+            min-width: 10%;
+            font-weight: 400;
+            box-shadow: none;
+            border: 1px solid black;
+            background-color: rgba(0,255,220,0.5);
+            transition: background-color 0.5s ease-in-out;
+        }
+        
+        .modal-button:hover {
+            color: white;
+            background-color: rgb(8,98,255);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <p>CSS ShowCase</p>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="content-head">
+                <span class="content-label">I am Content</span>
+            </div>
+            <div id="content-1" class="content-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <p>Fusce viverra sem quis orci consectetur, vel dignissim dolor tempor. 
+                    Donec vitae nibh et turpis tristique lacinia ac sit amet nulla. 
+                    Curabitur eleifend ipsum vitae ante maximus, at blandit orci sollicitudin. 
+                    Nullam feugiat neque sed dui lacinia, nec malesuada libero efficitur. 
+                    Donec semper nibh vitae metus vestibulum, sed rhoncus sapien efficitur. 
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+                    In hac habitasse platea dictumst. Suspendisse potenti. Sed et ultricies enim. 
+                    Integer elementum euismod mauris, ac sagittis lacus pharetra vel.</p>
+                <table>
+                    <tr>
+                        <th>stage</th>
+                        <th>slipped</th>
+                        <th>mail</th>
+                    </tr>
+                    <tr>
+                        <td>sharp</td>
+                        <td>unhappy</td>
+                        <td>environment</td>
+                    </tr>
+                    <tr>
+                        <td>cannot</td>
+                        <td>additional</td>
+                        <td>stick</td>
+                    </tr>
+                    <tr>
+                        <td>himself</td>
+                        <td>taught</td>
+                        <td>mistake</td>
+                    </tr>
+                    <tr>
+                        <td>disease</td>
+                        <td>universe</td>
+                        <td>total</td>
+                    </tr>
+                    <tr>
+                        <td>house</td>
+                        <td>cow</td>
+                        <td>hollow</td>
+                    </tr>
+                    <tr>
+                        <td>hospital</td>
+                        <td>pan</td>
+                        <td>power</td>
+                    </tr>
+                    <tr>
+                        <td>gradually</td>
+                        <td>ocean</td>
+                        <td>surprise</td>
+                    </tr>
+                </table>
+                <p>Alterum significari idem, ut si diceretur, officia media omnia aut pleraque servantem vivere. 
+                    Themistocles quidem, cum ei Simonides an quis alius artem memoriae polliceretur, Oblivionis, inquit, mallem. 
+                    Sed eum qui audiebant, quoad poterant, defendebant sententiam suam. Quis istum dolorem timet? Nemo igitur esse beatus potest. 
+                    Quae fere omnia appellantur uno ingenii nomine, easque virtutes qui habent, ingeniosi vocantur. 
+                    Sed ita falsa sunt ea, quae consequuntur, ut illa, e quibus haec nata sunt, vera esse non possint. 
+                    Tum Piso: Quoniam igitur aliquid omnes, quid Lucius noster? 
+                    Ita est quoddam commune officium sapientis et insipientis, ex quo efficitur versari in iis, quae media dicamus. 
+                    Quem quidem vos, cum improbis poenam proponitis, inpetibilem facitis, cum sapientem semper boni plus habere vultis, 
+                    tolerabilem. Utrum igitur tibi non placet, inquit, virtutisne tantam esse vim, 
+                    ut ad beate vivendum se ipsa contenta sit? Pompeius in foedere Numantino infitiando fuit, 
+                    nec vero omnia timente, sed primum qui animi conscientiam non curet, quam scilicet comprimere nihil est negotii. </p>
+            </div>
+            <div>
+                <button id="modal-1-button" class="modal-button">Details</button>
+                <div id="modal-1" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span id="modal-1-close" class="close">&times;</span>
+                            <p>Content Modal 1<p>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the Modal Body</p>
+                            <p>Some other text...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-head">
+                <p>
+                    <span class="content-label">I am another Content</span>
+                </p>
+            </div>
+            <div id="content-2" class="content-body">
+                <h1>Quid enim est a Chrysippo praetermissum in Stoicis?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Progredientibus autem aetatibus sensim tardeve potius quasi nosmet ipsos cognoscimus. 
+                    Quamvis enim depravatae non sint, pravae tamen esse possunt. 
+                    Ne amores quidem sanctos a sapiente alienos esse arbitrantur. <i>Et non ex maxima parte de tota iudicabis?</i>
+                    <b>Duo Reges: constructio interrete.</b> Dulce amarum, leve asperum, prope longe, stare movere, 
+                    quadratum rotundum. <b>Cur id non ita fit?</b> Eam stabilem appellas. </p>
+                <p>Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem D. 
+                    Ab hoc autem quaedam non melius quam veteres, quaedam omnino relicta. 
+                    Aliud igitur esse censet gaudere, aliud non dolere. <i>Sed virtutem ipsam inchoavit, nihil amplius.</i> 
+                    Serpere anguiculos, nare anaticulas, evolare merulas, cornibus uti videmus boves, nepas aculeis. 
+                    Sed memento te, quae nos sentiamus, omnia probare, nisi quod verbis aliter utamur, 
+                    mihi autem vestrorum nihil probari. Hic Speusippus, hic Xenocrates, hic eius auditor Polemo, 
+                    cuius illa ipsa sessio fuit, quam videmus. 
+                    Et certamen honestum et disputatio splendida! omnis est enim de virtutis dignitate contentio.
+                     Sin ea non neglegemus neque tamen ad finem summi boni referemus, non multum ab Erilli levitate aberrabimus. 
+                     Ex quo, id quod omnes expetunt, beate vivendi ratio inveniri et comparari potest. Sed non alienum est, 
+                     quo facilius vis verbi intellegatur, rationem huius verbi faciendi Zenonis exponere. </p>
+                <h2>Facillimum id quidem est, inquam.</h2>
+                <p>Non dolere, inquam, istud quam vim habeat postea videro; Vide, ne magis, inquam, tuum fuerit, 
+                    cum re idem tibi, quod mihi, videretur, non nova te rebus nomina inponere. 
+                    Non igitur de improbo, sed de callido improbo quaerimus, qualis Q. 
+                    Ipse enim Metrodorus, paene alter Epicurus, beatum esse describit his fere verbis: 
+                    cum corpus bene constitutum sit et sit exploratum ita futurum. Quis enim est, 
+                    qui non videat haec esse in natura rerum tria? Perturbationes autem nulla naturae vi commoventur,
+                     omniaque ea sunt opiniones ac iudicia levitatis. </p>
+                <p>At, illa, ut vobis placet, partem quandam tuetur, reliquam deserit. 
+                    Quis enim est, qui non videat haec esse in natura rerum tria? 
+                    Et non ex maxima parte de tota iudicabis? Num igitur utiliorem tibi hunc Triarium putas esse posse, 
+                    quam si tua sint Puteolis granaria? Cuius oratio attende, quaeso, Brute, 
+                    satisne videatur Antiochi complexa esse sententiam, quam tibi, 
+                    qui fratrem eius Aristum frequenter audieris, maxime probatam existimo. Itaque ab his ordiamur. 
+                    <i>Tamen a proposito, inquam, aberramus.</i> Laboro autem non sine causa; </p>
+                <blockquote cite='http://loripsum.net'>
+                    Et tamen vide, ne, si ego non intellegam quid Epicurus loquatur, cum Graece, ut videor, luculenter sciam, sit aliqua culpa eius, qui ita loquatur, ut non intellegatur.
+                </blockquote>
+                
+                <ul>
+                    <li>Ille vero, si insipiens-quo certe, quoniam tyrannus -, numquam beatus;</li>
+                    <li>Atqui perspicuum est hominem e corpore animoque constare, cum primae sint animi partes, secundae corporis.</li>
+                    <li>Qui autem esse poteris, nisi te amor ipse ceperit?</li>
+                    <li>Quod est, ut dixi, habere ea, quae secundum naturam sint, vel omnia vel plurima et maxima.</li>
+                    <li>In his igitur partibus duabus nihil erat, quod Zeno commutare gestiret.</li>
+                </ul>
+            </div>
+            <div>
+                <button id="modal-2-button" class="modal-button">Details</button>
+                <div id="modal-2" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span id="modal-2-close" class="close">&times;</span>
+                            <p>Content Modal 2<p>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the Modal Body</p>
+                            <p>Some other text...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p><span id="cc">©</span> By Just CSS</p>
+        </div>
+    </footer>
+    <script>
+        // Get the modal
+        var modal1 = document.getElementById("modal-1");
+
+        // Get the button that opens the modal
+        var btn1 = document.getElementById("modal-1-button");
+
+        // Get the <span> element that closes the modal
+        var span1 = document.getElementById("modal-1-close");
+
+        // When the user clicks on the button, open the modal 
+        btn1.onclick = function() {
+            modal1.style.display = "block";
+            var buttonRect = btn1.getBoundingClientRect();
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var modalTop = buttonRect.top + scrollTop;
+            var modalLeft = buttonRect.right + scrollLeft;
+            modal1.querySelector(".modal-content").style.top = modalTop + "px";
+            modal1.querySelector(".modal-content").style.left = modalLeft + "px";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span1.onclick = function() {
+            modal1.style.display = "none";
+        }
+
+        // Get the modal
+        var modal2 = document.getElementById("modal-2");
+
+        // Get the button that opens the modal
+        var btn2 = document.getElementById("modal-2-button");
+
+        // Get the <span> element that closes the modal
+        var span2 = document.getElementById("modal-2-close");
+
+        // When the user clicks on the button, open the modal 
+        btn2.onclick = function() {
+            modal2.style.display = "block";
+            var buttonRect = btn2.getBoundingClientRect();
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var modalTop = buttonRect.top + scrollTop;
+            var modalLeft = buttonRect.right + scrollLeft;
+            modal2.querySelector(".modal-content").style.top = modalTop + "px";
+            modal2.querySelector(".modal-content").style.left = modalLeft + "px";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span2.onclick = function() {
+            modal2.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
